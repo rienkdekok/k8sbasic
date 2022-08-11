@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sleepy-app-deployment2
+  labels:
+    app: sleepy-app2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sleepy-app2
+  template:
+    metadata:
+      labels:
+        app: sleepy-app2
+    spec:
+      containers:
+      - args:
+        - /bin/sh
+        - -c
+        - while true; do date; sleep 13; done
+        image: busybox
+        name: sleepy-app-container2
+      restartPolicy: Always
