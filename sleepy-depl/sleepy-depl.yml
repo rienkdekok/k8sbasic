@@ -16,8 +16,9 @@ spec:
     spec:
       containers:
       - args:
-      - /bin/sh
-      - -c
-      - while true; do date; sleep 13; done
-      image: busybox
-      name: sleepy-app-container
+        - /bin/sh
+        - -c
+        - while true; do date; sleep 13; done
+        image: busybox
+        name: sleepy-app-container
+      restartPolicy: Always
