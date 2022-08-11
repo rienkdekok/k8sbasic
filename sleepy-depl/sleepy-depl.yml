@@ -5,7 +5,7 @@ metadata:
   labels:
     app: sleepy-app
 spec:
-  replicas: 25
+  replicas: 5
   selector:
     matchLabels:
       app: sleepy-app
